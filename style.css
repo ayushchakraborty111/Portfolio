@@ -108,6 +108,7 @@ footer{
     }
     #projects{
         flex-wrap: wrap;
+        flex-direction: column;
     }
 }
 
