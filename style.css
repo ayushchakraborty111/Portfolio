@@ -4,36 +4,67 @@
 }
 
 #collapsible-div{
-    background-color: black;
+    background: linear-gradient( to right, rgb(0, 208, 255), rgb(53, 53, 121));
     text-align: center; 
+}
+
+.smoke-title{
+    position: relative;
+    font-size: 3vw;
+    user-select: none;
+}
+
+.smoke-title span{
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.smoke-title span.active{
+    animation: smoke 1s linear forwards;
+    transform-origin: bottom;
+}
+
+@keyframes smoke {
+    0%{
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0) translateY(0) rotate(0deg);
+    }
+    50%{
+        opacity: 1;
+        pointer-events: none;
+    }
+    100%{
+        opacity: 0;
+        filter: blur(20px);
+        transform: translate(300px) translateY(-300px) rotate(720deg) scale(4);
+    }
+}
+
+#collapsible-div{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px 0;
+    opacity: 0.5;
+    font-weight: bold;
 }
 
 #collapsible-div p{
     font-size: 15px;
 }
 
-ul a{
-    color: white;
+ul{
+    display: flex;
+    justify-content: space-evenly;
 }
 
-#list-items ul{
-    padding: 20px;    
+ul li a{
+    color: black;
+    font-size: 17px;
+    font-weight: bolder;
 }
-
-#list-items{
-    display: table;
-    margin: 5px auto;
-}
-
-#list-items ul li{
-    display: inline;
-}
-
-h2{
-    color: white;
-    margin: 20px auto;
-}
-
 li a:active
 {
     color: blue;
@@ -43,12 +74,16 @@ li a:active
 footer{
     color: black;
     text-align: center;
-    background-color: darkgray;
+    background: linear-gradient( to right, rgb(0, 208, 255), rgb(53, 53, 121));
 }
 
 .main-div{
     overflow: hidden;
   
+}
+
+#about a button:hover{
+    transform: scale(1.1);
 }
 
 #about h1{
@@ -70,6 +105,9 @@ footer{
     }
     #collapsible-div, .sub-main{
         width: 100%;
+    }
+    #projects{
+        flex-wrap: wrap;
     }
 }
 
@@ -95,7 +133,13 @@ footer{
 }
 
 #education #para1{
-    background-color: dodgerblue;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.Bachelor, .twelfth, .tenth{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .htm{
@@ -141,18 +185,31 @@ footer{
     border: 1px solid rgba(200, 216, 13, 0.954);
 }
 
-.lang1{
+.java{
     width: 40%;
 }
 
-.lang1 .htm-bar{
+.java .htm-bar{
     width: 50%;
     height: 8px;
     background-color: rgba(13, 216, 13, 0.954);
 }
 
-.lang1 .htm-progress{
+.java .htm-progress{
     border: 1px solid rgba(13, 216, 13, 0.954);
+}
+
+.lang-div{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.lang{
+    width: 50%;
+}
+
+.lang1{
+    width: 50%;
 }
 
 html{
@@ -169,10 +226,23 @@ html{
     border-width: 5px;
 } */
 
-#projects #p2
+/* #projects #p2
 {
     border: 1px double darkgray;
     border-width: 5px;   
+} */
+
+#projects{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+}
+
+.proj1{
+    width: 40%;
+}
+
+.proj2{
+    width: 50%;
 }
 
 #ecommerce button{
@@ -201,7 +271,7 @@ html{
     background-color: transparent;
     width: 300px;
     height: 200px;
-    border: 1px solid #bbb;
+    /* border: 1px solid #bbb; */
     perspective: 1000px;
 }
 
@@ -231,7 +301,7 @@ html{
 }
 
 .flip-box-front{
-    background-color: #bbb;
+    /* background-color: #bbb; */
     color: black;
 }
 
@@ -239,4 +309,12 @@ html{
     background-color: dodgerblue;
     color: wheat;
     transform: rotateY(180deg);
+}
+
+.btn-div{
+    font-size: 26px;
+}
+
+.btn-div a{
+    text-decoration: none;
 }
